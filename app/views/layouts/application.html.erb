@@ -10,6 +10,29 @@
   </head>
 
   <body>
+    <header>
+    <div class= "container">
+      <div class = "header-content">
+      <% if trainer_signed_in? %>
+        <div class = "header-left">
+          <h3><%=link_to "顧客管理システム","/trainers/#{current_trainer.id}", class:"title" %></h3>
+        </div>
+        <div class= "header-right">
+          <%=link_to "ログアウト",destroy_trainer_session_path, method: :delete, class:"logout" %>
+          <%=link_to "顧客情報一覧", class:"client" %>
+        </div>
+      <%else%>
+        <div class = "header-left">
+          <h3><%=link_to "顧客管理システム",trainers_path, class:"title" %></h3>
+        </div>
+        <div class= "header-right">
+            <%=link_to "ログイン",  new_trainer_password_path, class:"login" %>
+            <%=link_to "登録", new_trainer_registration_path, class:"signin" %>
+        </div>
+      <%end%>
+      </div>
+    </div>
+  </header>
     <%= yield %>
   </body>
 </html>
