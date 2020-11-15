@@ -48,11 +48,11 @@
 | --------------------|----------------| ---------------------------|
 | name                |   string       | null: false                |
 | age                 |   integer      | null: false                |
-| sex                 |   string       | null: false                |
+| sex                 |   boolean      | null: false                |
 | purpose             |   text         | null: false                |
 | weekness            |   text         | null: false                |
-| belonging           |   string         | null: false                |
-| session_wday        |   string       | null: false                |
+| belonging           |   string       | null: false                |
+| session_day         |   date         | null: false                |
 | session_time        |   time         | null: false                |
 | remarks             |   text         |                            |
 | user                |   references   | foreign_key: true          |
