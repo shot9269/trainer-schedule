@@ -50,7 +50,7 @@
 | age                 |   integer      | null: false                |
 | sex                 |   boolean      | null: false                |
 | purpose             |   text         | null: false                |
-| weekness            |   text         | null: false                |
+| weakness            |   text         | null: false                |
 | belonging           |   string       | null: false                |
 | session_day         |   date         | null: false                |
 | session_time        |   time         | null: false                |

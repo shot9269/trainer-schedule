@@ -1,33 +1,17 @@
 <div class= "main">
   <div class="container">
+  <h2>顧客一覧</h2>
     <div class = "clients">
-      <ul class= "client-list">
-        <li>
-          <img src="samle.img" alt="">
-          <p>名前</p>
-          <p>店舗名</p>
-          <p>目的</p>
-          <p>年齢</p>
-          <p>次回予約日</p>
-        </li>
-        <li>
-           <img src="samle.img" alt="">
-          <p>名前</p>
-          <p>店舗名</p>
-          <p>目的</p>
-          <p>年齢</p>
-          <p>次回予約日</p>
-        </li>
-        <li>
-          <img src="samle.img" alt="">
-          <p>名前</p>
-          <p>店舗名</p>
-          <p>目的</p>
-          <p>年齢</p>
-          <p>次回予約日</p>
-        </li>
-       </ul>
-      </div>
+        <table border="2">
+          <tr>
+            <th>名前</th><th>所属ジム</th><th>次回セッション</th><th>開始時間</th>
+          </tr>
+          <% @clients.each do |client|%>
+          <tr>
+            <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%= client.session_day%></th><th><%= client.session_time.strftime('%H:%S')%></th>
+          </tr>
+          <%end%>
+        </table>
+    </div>
   </div>
-
 </div>

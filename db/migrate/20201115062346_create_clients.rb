@@ -5,8 +5,10 @@ class CreateClients < ActiveRecord::Migration[6.0]
       t.integer :age,         null: false
       t.boolean :sex,         null: false
       t.string :belonging,    null: false   
+      t.string :weakness,     null: false   
+      t.string :purpose,      null: false   
       t.date   :session_day,  null: false 
-      t.string :session_time, null: false  
+      t.time :session_time, null: false  
       t.text :remarks
       t.references :trainer,     foreign_key: true
       t.timestamps

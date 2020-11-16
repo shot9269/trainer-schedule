@@ -17,9 +17,7 @@
   margin: 0;
   padding: 0;
 }
-a{
-  text-decoration: none;
-}
+
 
 /* ヘッダー */
 header{
@@ -32,6 +30,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 70px;
 }
 .header-left{
   display: flex;
@@ -41,23 +40,19 @@ header{
 }
 .title{
  color: black;
- margin
+ text-decoration: none;
 }
 .header-right{
  display: inline-block
 }
-.login, .logout, .top-about, .client-list{
+.login, .logout, .top-about, .client, .client_all{
  color: #4b4b4b;
  font-weight: 700;
  font-size: 13px;
  padding: 8px 6px;
+ text-decoration: none;
 }
-.client-list{
-  color: #4b4b4b;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 6px;
-}
+
 .signin{
  color: white;
  font-size: 13px;
@@ -65,6 +60,7 @@ header{
  padding: 8px 14px;
  background-color: coral;
  border-radius: 10px;
+ text-decoration: none;
 }
 .top-about:hover{
  color: black
