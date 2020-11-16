@@ -45,7 +45,7 @@ header{
 .header-right{
  display: inline-block
 }
-.login, .logout, .top-about, .client{
+.login, .logout, .top-about, .client, .client_all{
  color: #4b4b4b;
  font-weight: 700;
  font-size: 13px;
