@@ -69,6 +69,7 @@
 |  title                    |   string       | null: false                |
 |  description              |   text         | null: false                |
 |  caution                  |   text         | null: false                |
+|  client                   |   references   | foreign_key: true          |
 
 ###Association
 - belongs_to :client
