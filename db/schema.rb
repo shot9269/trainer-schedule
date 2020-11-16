@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_023944) do
     t.string "weakness", null: false
     t.string "purpose", null: false
     t.date "session_day", null: false
-    t.string "session_time", null: false
+    t.time "session_time", null: false
     t.text "remarks"
     t.bigint "trainer_id"
     t.datetime "created_at", precision: 6, null: false
