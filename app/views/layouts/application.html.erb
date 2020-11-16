@@ -18,7 +18,7 @@
           <h3><%=link_to "顧客管理システム","/trainers/#{current_trainer.id}", class:"title" %></h3>
         </div>
         <div class= "header-right">
-          <%=link_to "顧客一覧",trainer_path(current_trainer.id), class:"client_all" %>
+          <%=link_to "顧客一覧",clients_path, class:"client_all" %>
           <%=link_to "顧客追加",new_client_path, class:"client" %>
           <%=link_to "ログアウト",destroy_trainer_session_path, method: :delete, class:"logout" %>
         </div>
