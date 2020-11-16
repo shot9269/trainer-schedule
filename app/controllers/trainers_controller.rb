@@ -1,4 +1,4 @@
-class TrainersController < ApplicationController
+class TrainersController < ApplicationController 
   def index
   end
 
