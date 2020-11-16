@@ -8,7 +8,7 @@
           </tr>
           <% @clients.each do |client|%>
           <tr>
-            <th><%=link_to client.name, client_path(client.trainer.id) %></th><th><%= client.belonging%></th><th><%= client.session_day%></th><th><%= client.session_time.strftime('%H:%S')%></th>
+            <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%= client.session_day%></th><th><%= client.session_time.strftime('%H:%S')%></th>
           </tr>
           <%end%>
         </table>

@@ -12,6 +12,11 @@ class ClientsController < ApplicationController
     end
   end
 
+  def show
+    @client = Client.find(params[:id])
+  end
+
+
   private
   def client_params
     params.require(:client).permit(:image,:name,:age,:sex,:belonging,:weakness,:purpose,:session_day,:session_time,:remarks).merge(trainer_id: current_trainer.id)
