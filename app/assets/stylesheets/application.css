@@ -46,18 +46,13 @@ header{
 .header-right{
  display: inline-block
 }
-.login, .logout, .top-about, .client-list{
+.login, .logout, .top-about, .client{
  color: #4b4b4b;
  font-weight: 700;
  font-size: 13px;
  padding: 8px 6px;
 }
-.client-list{
-  color: #4b4b4b;
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 6px;
-}
+
 .signin{
  color: white;
  font-size: 13px;
