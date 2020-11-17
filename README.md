@@ -61,27 +61,18 @@
 - belongs :trainer
 - has_many :menus
 
-##menusテーブル
+
+##plansテーブル
 
 | Columns                   | Types          | Option                     |
 | --------------------------|----------------| ---------------------------|
-|  workout_name             |   string       | null: false                |
-|  workout1                 |   string       | null: false                |
-|  rep1                     |   integer      | null: false                |
-|  set1                     |   integer      | null: false                |
-|  workout2                 |   string       | null: false                |
-|  rep2                     |   integer      | null: false                |
-|  set2                     |   integer      | null: false                |
-|  workout3                 |   string       | null: false                |
-|  rep3                     |   integer      | null: false                |
-|  set3                     |   integer      | null: false                |
-|  workout4                 |   string       | null: false                |
-|  rep4                     |   integer      | null: false                |
-|  set4                     |   integer      | null: false                |
-|  workout5                 |   string       | null: false                |
-|  rep5                     |   integer      | null: false                |
-|  set5                     |   integer      | null: false                |
-| remarks                   |   text         |                            |
-| client                    |   references   | foreign_key: true          |
+|  title                    |   string       | null: false                |
+|  description              |   text         | null: false                |
+|  caution                  |   text         | null: false                |
+|  client                   |   references   | foreign_key: true          |
+
 ###Association
 - belongs_to :client
+- has_many :plan_details
+
+
