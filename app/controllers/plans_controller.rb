@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   def index
     @plans = Plan.all
+    @client = Client.find(params[:client_id])
   end
 
   def new
