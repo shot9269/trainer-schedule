@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
   def index
     @plans = Plan.all
+    @client = Client.find(params[:client_id])
   end
 
   def new
@@ -11,7 +12,7 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
-      redirect_to clients_path
+      redirect_to new_client_plan_plan_detail_path(client_id: @plan.client_id,plan_id: @plan.id)
     else
       @client = Client.find(params[:client_id])
       render :new

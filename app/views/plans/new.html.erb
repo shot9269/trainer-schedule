@@ -1,7 +1,7 @@
 <h2><%= @client.name%>様の新規メニュー</h2>
 
 <ul class = "client_info">
-  <%= form_with  model: @plan,url: client_plans_path(client_id: @client.id), local: true do |f| %>
+  <%= form_with( model: [@client, @plan], local: true) do |f| %>
     <li>
       <%= f.label :title, "タイトル" %><br>
       <%= f.text_field :title%>
@@ -15,6 +15,7 @@
     <%= f.text_area :caution %>
     </li>
 
-    <%=f. "詳細の追加"%>
+    <%=f.submit "詳細を追加"%>
+
   <%end%>
 </ul>

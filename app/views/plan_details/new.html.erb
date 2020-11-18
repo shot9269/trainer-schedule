@@ -1,0 +1,35 @@
+<%= @plan.title%><br>
+<%= @plan.description %>
+
+<%= form_with model:[@client,@plan,@plan_detail],local: true do |f|%>
+<ul class = "plan_detail_subject">
+    <li>
+      <%= f.label :subject, "種目:" %>
+      <%= f.text_field :subject%>
+    </li>
+    <li>
+      <%= f.label :weight, "/重量:" %>
+      <%= f.number_field :weight,class:"weight"%><span>kg/</span>
+    </li>
+    <li>
+      <%= f.label :set, "セット数:"%>
+      <%= f.number_field :set,class:"subject_set_rep" %><span>セット/</span>
+    </li>
+    <li>
+    <%= f.label :rep, "回数:" %>
+    <%= f.number_field :rep,class:"subject_set_rep" %><span>回</span>
+    </li>
+    <button type="button" id="add_subject">項目を追加</button>
+</ul>
+<ul class = "plan_detail_subject">
+    <li>
+      <%= f.label :cardio, "有酸素運動:" %>
+      <%= f.text_field :cardio%>
+    </li>
+    <li>
+      <%= f.label :cardio_time, "/時間:" %>
+      <%= f.number_field :cardio_time,class:"cardio_time"%><span>分</span>
+    </li>
+</ul>
+  <%=f.submit "保存"%>
+<%end%>
