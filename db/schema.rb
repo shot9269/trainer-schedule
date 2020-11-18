@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_093225) do
+ActiveRecord::Schema.define(version: 2020_11_17_013820) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 2020_11_16_093225) do
     t.index ["trainer_id"], name: "index_clients_on_trainer_id"
   end
 
+  create_table "plan_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "subject", null: false
+    t.integer "weight", null: false
+    t.integer "set", null: false
+    t.integer "rep", null: false
+    t.string "cardio"
+    t.integer "cardio_time"
+    t.bigint "plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plan_id"], name: "index_plan_details_on_plan_id"
+  end
+
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
@@ -76,5 +89,6 @@ ActiveRecord::Schema.define(version: 2020_11_16_093225) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "clients", "trainers"
+  add_foreign_key "plan_details", "plans"
   add_foreign_key "plans", "clients"
 end
