@@ -1,4 +1,10 @@
 
+<%= @client.name%>様のメニュー一覧
 <% @client.plans.each_with_index do |plan,i|%>
-<%=i+1 %>&nbsp;<%= plan.title%>
+<ul>
+  <li>
+    <%=i+1 %>&nbsp;<%=link_to plan.title, client_plan_plan_detail_path(plan_id:plan.id, id: plan.plan_details.ids)%>
+    <%= link_to "削除", client_plan_path(id: plan.id),method: :delete, data: {confirm: "#{plan.title}を削除しますか？"} %>
+  </li>
+</ul>
 <%end%>

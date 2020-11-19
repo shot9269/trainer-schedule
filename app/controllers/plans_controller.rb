@@ -19,6 +19,13 @@ class PlansController < ApplicationController
     end
   end
 
+  def destroy
+    plan = Plan.find(params[:id])
+    plan.destroy
+    redirect_to client_plans_path(client_id: current_trainer.id)
+  end
+
+
   private
   def plan_params
     params.require(:plan).permit(:title,:description,:caution).merge(client_id: params[:client_id])
