@@ -6,6 +6,7 @@
     <th>種目</th><th>重量</th><th>セット数</th><th>レップ数</th>
   </tr>
   <tr>
-    <td><%= @plan_detail.subject%></td><td><%= @plan_detail.weight%>kg</td><td><%= @plan_detail.set%>sets</td><td><%= @plan_detail.rep%>reps</td>
+
+    <td><%= @plan_detail.subject%></td><td><%= @plan_detail.weight%>kg</td><td><%= @plan_detail.set%>sets</td><td><%= @plan_detail.rep%>reps</td><td><%=link_to "編集",edit_client_plan_plan_detail_path%></td>
   </tr>
 </table>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "trainers#index"
   resources :clients, only: [:index,:new, :create,:show] do
     resources :plans, only: [:new, :create,:index,:destroy] do
-      resources :plan_details, only: [:new,:create,:show]
+      resources :plan_details, only: [:new,:create,:show,:edit,:update]
     end
   end
 end
