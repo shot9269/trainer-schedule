@@ -3,6 +3,7 @@ class TrainersController < ApplicationController
   end
 
   def show
+    @clients = Client.where(trainer_id: current_trainer.id)
   end
   
 end
