@@ -1,24 +1,31 @@
 <div class= "main">
   <div class="container">
-  <h2>顧客一覧</h2>
-    <div class = "clients">
-        <table border="2">
-          <tr>
-            <th>名前</th><th>所属ジム</th><th>次回セッション</th><th>開始時間</th><th></th><th></th>
-          </tr>
-          <% @clients.each do |client|%>
-          <tr>
-            <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
-            <th><%= client.session_time.strftime('%H:%S')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
-          </tr>
-          <%end%>
-        </table>
-    </div>
+    <h2>顧客一覧</h2>
+      <div class = "clients">
+          <table border="2">
+            <tr>
+              <th>名前</th><th>所属ジム</th><th>次回セッション</th><th>開始時間</th><th></th><th></th>
+            </tr>
+            <% @clients.each do |client|%>
+            <tr>
+              <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
+              <th><%= client.session_time.strftime('%H:%S')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
+            </tr>
+            <%end%>
+          </table>
+      </div>
+      <div class="calender">
+        <%= month_calendar events: @clients do |date, clients| %>
+          <%= date.day %><br>
+          <%clients.each do |client|%>
+          <ul class="calender_client">
+            <li class="calender_client_list">
+              <%= client.name%>
+              <%= client.session_time.strftime('%H:%S')%>
+            </li>
+          </ul>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
-<%= month_calendar events: @clients do |date, clients| %>
-  <%= date %>
-    <%clients.each do |client|%>
-      <%= client.name%>
-    <% end %>
-<% end %>
