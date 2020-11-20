@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :trainers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :trainers, only: [:show,:index]
-  root to: "trainers#index"
-  resources :clients, only: [:index,:new, :create,:show] do
-    resources :plans, only: [:new, :create,:index,:destroy] do
+  root to: "trainers#show"
+  resources :clients do
+    resources :plans, only: [:new, :create,:index,:destroy,:edit,:update] do
       resources :plan_details, only: [:new,:create,:show,:edit,:update]
     end
   end

@@ -8,7 +8,7 @@
           </tr>
           <% @clients.each do |client|%>
           <tr>
-            <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%= client.session_day%></th>
+            <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
             <th><%= client.session_time.strftime('%H:%S')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
           </tr>
           <%end%>
@@ -16,3 +16,9 @@
     </div>
   </div>
 </div>
+<%= month_calendar events: @clients do |date, clients| %>
+  <%= date %>
+    <%clients.each do |client|%>
+      <%= client.name%>
+    <% end %>
+<% end %>

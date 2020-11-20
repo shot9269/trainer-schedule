@@ -20,10 +20,25 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
+  def edit
+    @client= Client.find(params[:id])
+  end
+
+
+  def update
+    @client= Client.find(params[:id])
+    if @client.update(client_params)
+      redirect_to trainer_path(current_trainer.id)
+    else
+      render :edit
+    end
+  end
+
+
 
   private
   def client_params
-    params.require(:client).permit(:image,:name,:age,:sex,:belonging,:weakness,:purpose,:session_day,:session_time,:remarks).merge(trainer_id: current_trainer.id)
+    params.require(:client).permit(:image,:name,:age,:sex,:belonging,:weakness,:purpose,:start_time,:session_time,:remarks).merge(trainer_id: current_trainer.id)
   end
 
 end

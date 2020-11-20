@@ -9,7 +9,7 @@ class Client < ApplicationRecord
     validates :sex
     validates :purpose
     validates :belonging
-    validates :session_day
+    validates :start_time
     validates :session_time
     validates :trainer_id
   end

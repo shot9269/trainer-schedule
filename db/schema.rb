@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_013820) do
+ActiveRecord::Schema.define(version: 2020_11_20_062419) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_013820) do
     t.string "belonging", null: false
     t.string "weakness", null: false
     t.string "purpose", null: false
-    t.date "session_day", null: false
+    t.date "start_time", null: false
     t.time "session_time", null: false
     t.text "remarks"
     t.bigint "trainer_id"
