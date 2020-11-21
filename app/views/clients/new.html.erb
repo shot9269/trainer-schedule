@@ -1,5 +1,6 @@
 <ul class = "client_info">
   <%= form_with  model: @client, url:clients_path, local: true do |f| %>
+    <%=render 'shared/error_messages', model: f.object %>
     <li>
       <%= f.label :name, "クライアント写真" %><br>
       <%= f.file_field :image%>

@@ -29,10 +29,12 @@ class PlanDetailsController < ApplicationController
 
   def update
     @plan_detail = PlanDetail.find(params[:id])
-    @plan_detail.update(plan_detail_params)
-    redirect_to client_plans_path(client_id: @client.id)
+    if @plan_detail.update(plan_detail_params)
+      redirect_to client_plans_path(client_id: @client.id)
+    else
+      render :edit
+    end
   end
-
   private
   def plan_detail_params
     params.require(:plan_detail).permit(:subject,:weight,:set,:rep,:cardio,:cardio_time).merge(plan_id: params[:plan_id])
