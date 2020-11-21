@@ -1,5 +1,5 @@
 class PlanDetailsController < ApplicationController
-
+  before_action :authenticate_trainer!
   before_action :client_id, only:[:new,:create,:show,:edit,:update]
   before_action :plan_id, only:[:new,:create,:show,:edit,:update]
 

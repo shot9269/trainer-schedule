@@ -1,4 +1,8 @@
 class ClientsController < ApplicationController
+  before_action :authenticate_trainer!
+  before_action :authorized_trainer, only: [:show,:edit,:update]
+  before_action :client_id, only: [:show,:edit,:update]
+
   def index
     @clients = Client.where(trainer_id: current_trainer.id)
   end
@@ -17,16 +21,13 @@ class ClientsController < ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id])
   end
 
   def edit
-    @client= Client.find(params[:id])
   end
 
 
   def update
-    @client= Client.find(params[:id])
     if @client.update(client_params)
       redirect_to clients_path
     else
@@ -37,8 +38,18 @@ class ClientsController < ApplicationController
 
 
   private
+  def client_id
+    @client = Client.find(params[:id])
+  end
+
   def client_params
     params.require(:client).permit(:image,:name,:age,:sex,:belonging,:weakness,:purpose,:start_time,:session_time,:remarks).merge(trainer_id: current_trainer.id)
   end
 
+  def authorized_trainer
+    @client = Client.find(params[:id])
+    if current_trainer.id != @client.trainer_id
+      redirect_to new_trainer_session_path
+    end
+  end
 end

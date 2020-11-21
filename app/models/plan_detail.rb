@@ -6,7 +6,6 @@ class PlanDetail < ApplicationRecord
     validates :set
     validates :rep
     validates :plan_id
-
   end
 
 end
