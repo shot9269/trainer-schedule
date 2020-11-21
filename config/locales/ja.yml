@@ -19,7 +19,11 @@ ja:
       trainer:
         name: 名前
         email: メール
-        encrypted_password: パスワード
+        password: パスワード
+        password_confirmation: 確認
+        belonging: 所属店舗
+        area: 活動地域
+
       plan:
         title: タイトル
         description: 説明
