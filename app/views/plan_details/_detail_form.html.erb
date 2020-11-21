@@ -1,6 +1,7 @@
 <%= @plan.title%><br>
 <%= @plan.description %>
 <%= form_with model:[@client,@plan,@plan_detail],id:"workoutForm",local: true do |f|%>
+<%=render 'shared/error_messages', model: f.object %>
 <ul class = "plan_detail_subject", id = "workout">
     <li>
       <%= f.label :subject, "種目:" %>
