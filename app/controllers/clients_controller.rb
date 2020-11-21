@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :authenticate_trainer!
-  before_action :authorized_trainer, only: [:show,:edit,:update]
+  # before_action :authorized_trainer, only: [:show,:edit,:update]
   before_action :client_id, only: [:show,:edit,:update]
 
   def index
