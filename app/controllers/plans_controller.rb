@@ -1,4 +1,6 @@
 class PlansController < ApplicationController
+  before_action :authenticate_trainer!
+
   def index
     @plans = Plan.all
     @client = Client.find(params[:client_id])

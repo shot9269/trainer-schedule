@@ -9,19 +9,19 @@
             <% @clients.each do |client|%>
             <tr>
               <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
-              <th><%= client.session_time.strftime('%H:%S')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
+              <th><%= client.session_time.strftime('%H:%M')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
             </tr>
             <%end%>
           </table>
       </div>
       <div class="calender">
         <%= month_calendar events: @clients do |date, clients| %>
-          <%= date.day %><br>
+          <%= date.day %>
           <%clients.each do |client|%>
           <ul class="calender_client">
             <li class="calender_client_list">
               <%= client.name%>
-              <%= client.session_time.strftime('%H:%S')%>
+              <%= client.session_time.strftime('%H:%M')%>
             </li>
           </ul>
           <% end %>
