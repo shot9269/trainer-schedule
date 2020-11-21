@@ -7,6 +7,25 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      client:
+        name: 名前
+        age: 年齢
+        sex: 性別
+        purpose: 目的
+        belonging: 所属店舗
+        start_time: 予約日
+        session_time: 予約時間
+      trainer:
+        name: 名前
+        email: メール
+        encrypted_password: パスワード
+      plan:
+        title: タイトル
+        description: 説明
+        caution: 既往歴
+        
+
   date:
     abbr_day_names:
     - 日
