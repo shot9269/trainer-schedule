@@ -47,7 +47,7 @@ header{
 .header-right{
  display: inline-block
 }
-.login, .logout, .top-about, .client, .client_all{
+.login, .logout, .top-about, .client, .client_all,.signin{
  color: #4b4b4b;
  font-weight: 700;
  font-size: 13px;
@@ -55,14 +55,8 @@ header{
  text-decoration: none;
 }
 
-.signin{
- color: white;
- font-size: 13px;
- font-weight: 500;
- padding: 8px 14px;
- background-color: coral;
- border-radius: 10px;
- text-decoration: none;
+.signin:hover{
+
 }
 .top-about:hover{
  color: black
