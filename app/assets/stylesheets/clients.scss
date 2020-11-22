@@ -31,3 +31,46 @@ th,td{
 .calender_client_list{
   font-size: 13px;
 }
+// 詳細ページ
+.client_detail{
+  width: 80%;
+  margin: 0 auto; 
+}
+.client_detail_inner{
+  display: flex;
+  width: 100%;
+}
+
+.client_detail_title{
+  margin-bottom: 30px;
+  margin-right: 100px;
+  width: 100px;
+}
+.client_detail_content{
+  display: block;
+  margin-bottom: 29px;
+  width: 300px;
+  border-bottom: 1px solid #4b4b4b;
+}
+.button_wrapper{
+  display:flex;
+  justify-content: flex-end;
+  width: 60%;
+  margin: 0 auto;
+}
+.delete_link{
+  height: 33.98px;
+  margin-right: 10px;
+  padding-top: 8px;
+  font-size: small;
+}
+.show_update{
+  border: none;
+  background-color: #4b4b4b;;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+#untotice{
+  height: 100px;
+}
