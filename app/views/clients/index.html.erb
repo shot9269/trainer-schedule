@@ -1,20 +1,23 @@
 <div class= "main">
   <div class="container">
-    <h2>顧客一覧</h2>
+    <h2 class="page_title">顧客一覧</h2>
       <div class = "clients">
-          <table border="2">
-            <tr>
-              <th>名前</th><th>所属ジム</th><th>次回セッション</th><th>開始時間</th><th></th><th></th>
+          <table>
+            <tr class="table_header">
+              <th>名前</th><th>所属ジム</th><th>次回セッション<br><span class="session_update">※日付をクリックして更新してください</span></th><th>開始時間</th><th colspan="2">メニュー管理</th>
             </tr>
             <% @clients.each do |client|%>
             <tr>
               <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
-              <th><%= client.session_time.strftime('%H:%M')%></th><th><%=link_to "メニュー作成",new_client_plan_path(client_id: client.id)%></th><th><%= link_to "メニュー一覧",client_plans_path(client_id: client.id)%></th>
+              <th><%= client.session_time.strftime('%H:%M')%></th><th><%=button_to "作成",new_client_plan_path(client_id: client.id),method: :get%></th><th><%= button_to "一覧をみる",client_plans_path(client_id: client.id),method: :get%></th>
             </tr>
             <%end%>
           </table>
       </div>
       <div class="calender">
+      <div class="calender_header">
+        <h3>カレンダー</h3>
+      </div>
         <%= month_calendar events: @clients do |date, clients| %>
           <%= date.day %>
           <%clients.each do |client|%>

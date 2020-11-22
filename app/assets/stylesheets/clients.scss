@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.clients{
+  margin-bottom: 50px;
+}
+table{
+  width: 100%;
+}
+.table_header{
+  color:white;
+  background-color: #4b4b4b;
+  height: 30px;
+}
+th,td{
+  border:solid 1px #aaaaaa;
+  font-weight: lighter;
+}
+.session_update{
+  font-size: 8px;
+}
+// カレンダー
 .calender{
   width: 80%;
 }
@@ -10,5 +29,5 @@
   padding: 0;
 }
 .calender_client_list{
-  font-size: 15px;
+  font-size: 13px;
 }
