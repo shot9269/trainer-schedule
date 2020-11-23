@@ -8,7 +8,7 @@
             </tr>
             <% @clients.each do |client|%>
             <tr>
-              <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, edit_client_path(client.id)%></th>
+              <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, session_update_client_path(client.id)%></th>
               <th><%= client.session_time.strftime('%H:%M')%></th><th><%=button_to "作成",new_client_plan_path(client_id: client.id),method: :get%></th><th><%= button_to "一覧をみる",client_plans_path(client_id: client.id),method: :get%></th>
             </tr>
             <%end%>

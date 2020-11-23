@@ -39,11 +39,10 @@
           </p>
         </li>
       </div>
+      <div class= "client_detail_inner button_wrapper">
+        <%= link_to "削除",  client_path(@client.id),method: :delete,class:"delete_link",data: { confirm: "削除してよろしいですか？" }%>
+        <%= button_to "編集",  edit_client_path(@client.id),class:"show_update",method: :get%>
+      </div>
     </ul>
-
-  </div>
-  <div class= "button_wrapper">
-    <%= link_to "削除",  edit_client_path(@client.id),class:"delete_link"%>
-    <%= button_to "編集",  edit_client_path(@client.id),class:"show_update"%>
   </div>
 </div>
