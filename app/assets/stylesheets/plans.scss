@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.add_detail_btn{
+.plan_index_table{
+  width: 70%;
+}
+.add_plan_area{
+  width: 70%;
+}
+.add_detail_btn, .add_plan_btn{
   margin:0 0 0 auto ;
   border: none;
   background-color: #4b4b4b;;
@@ -10,6 +16,16 @@
   padding: 5px 15px;
   cursor: pointer;
 }
+// プラン一覧画面
+.add_plan_btn{
+  display: block;
+  margin:20px 0 0 auto ;
+}
+.plan_empty{
+  font-size: small;
+}
+
+// 新規作成
 .title, .description,.caution{
   width: 100%;
 }

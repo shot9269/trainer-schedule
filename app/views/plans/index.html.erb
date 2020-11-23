@@ -1,8 +1,8 @@
 <div class="container">
   <h2 class="login_trainer_title"><%= @client.name%>様トレーニングプラン一覧</h2>
-  <table>
+  <table class="plan_index_table">
       <tr class="table_header">
-        <th></th><th>プラン名</th><th>削除</th><th>編集</th>
+        <th></th><th>プラン名</th><th colspan="2"></th>
       </tr>
     <% @client.plans.each_with_index do |plan,i|%>
       <tr>
@@ -12,4 +12,10 @@
       </tr>
     <%end%>
   </table>
+  <div class="add_plan_area">
+  <% if @client.plans.empty? %>
+    <p class="plan_empty">プランがありません。右下の追加ボタンからメニューを追加して下さい。</p>
+  <% end %>
+    <%=button_to "プランの追加",new_client_plan_path(client_id: @client.id),method: :get,class:"add_plan_btn"%>
+  </div>
 </div>
