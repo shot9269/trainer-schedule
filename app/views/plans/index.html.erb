@@ -1,10 +1,15 @@
-
-<%= @client.name%>様のメニュー一覧
-<% @client.plans.each_with_index do |plan,i|%>
-<ul>
-  <li>
-    <%=i+1 %>&nbsp;<%=link_to plan.title, client_plan_plan_detail_path(plan_id:plan.id, id: plan.plan_details.ids)%>
-    <%= link_to "削除", client_plan_path(id: plan.id),method: :delete, data: {confirm: "#{plan.title}を削除しますか？"} %>
-  </li>
-</ul>
-<%end%>
+<div class="container">
+  <h2 class="login_trainer_title">トレーニングプラン一覧</h2>
+  <table>
+    <% @client.plans.each_with_index do |plan,i|%>
+      <tr class="table_header">
+        <th></th><th>プラン名</th><th>削除</th><th>編集</th>
+      </tr>
+      <tr>
+        <th><%=i+1 %></th><th><%=link_to plan.title, client_plan_plan_detail_path(plan_id:plan.id, id: plan.plan_details.ids)%></th>
+        <th><%= link_to "削除", client_plan_path(id: plan.id),method: :delete, data: {confirm: "#{plan.title}を削除しますか？"} %></th>
+        <th><%= link_to "編集", client_plan_path(id: plan.id)%></th>
+      </tr>
+      <%end%>
+    </table>
+</div>
