@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :authenticate_trainer!
-  # before_action :authorized_trainer, only: [:show,:edit,:update]
+  #before_action :authorized_trainer, only: [:show,:edit,:update]
   before_action :client_id, only: [:show,:edit,:update,:session_update]
 
   def index
@@ -28,6 +28,7 @@ class ClientsController < ApplicationController
 
 
   def update
+
     if @client.update(client_params)
       redirect_to trainer_path(current_trainer.id)
     else
