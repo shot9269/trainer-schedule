@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="login_trainer_title"><%= @plan.title%></h2>
-  
+  <h3>筋力トレーニング</h3>
   <table class="plan_index_table">
     <tr class="table_header">
       <th>種目</th><th>重量</th><th>セット数</th><th>レップ数</th><th></th>
@@ -10,6 +10,12 @@
       <td><%= @plan_detail.subject%></td><td><%= @plan_detail.weight%>kg</td><td><%= @plan_detail.set%>sets</td><td><%= @plan_detail.rep%>reps</td><td><%=link_to "編集",edit_client_plan_plan_detail_path%></td>
     </tr>
   </table>
+  <h3>カーディオ</h3>
+  <% if @plan_detail.cardio.present? %>
+    <%= @plan_detail.cardio%>：<%= @plan_detail.cardio_time%>分
+  <% else %>
+    <p>有酸素運動はありません</p>
+  <% end %>
   <div class="add_plan_area">
     <%=link_to "戻る",client_plans_path(client_id: @client.id),method: :get,class:"back_to_index"%>
   </div>
