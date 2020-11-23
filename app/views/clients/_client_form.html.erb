@@ -1,0 +1,55 @@
+    <%= form_with  model: @client, url:clients_path, local: true do |f| %>
+    <div class="error_message">
+      <%=render 'shared/error_messages', model: f.object %>
+    </div>
+    <ul class = "client_detail">
+      <div class="client_detail_inner">
+          <li class="client_input_label"><%= f.label :name, "クライアント写真"%></li>
+          <li class="client_input"><%= f.file_field :image%></li>
+      </div>
+      <div class="client_detail_inner">
+          <li class="client_input_label"><%= f.label :name, "名前"%></li>
+          <li class="client_input"><%= f.text_field :name ,class:"name"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :name, "年齢"%></li>
+        <li class="client_input"><%= f.number_field :age,class:"age" %>歳</li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :sex, "性別"%></li>
+        <li class="client_input">
+          <%= f.label :sex, "男性" %>
+          <%= f.radio_button :sex, :male %>
+          <%= f.label :sex, "女性" %>
+          <%= f.radio_button :sex, :female %>
+        </li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :purpose, "目的" %></li>
+        <li class="client_input"><%= f.text_area :purpose,class:"purpose"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :weakness, "強化すべき点" %></li>
+        <li class="client_input"><%= f.text_area :weakness ,class:"weakness"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :belonging, "所属店舗"%></li>
+        <li class="client_input"><%= f.text_field :belonging ,class:"belonging"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :start_time, "次回予約日"%></li>
+        <li class="client_input"><%= f.date_field :start_time ,class:"start_time"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :session_time, "開始時間"%></li>
+        <li class="client_input"><%= f.time_field :session_time ,class:"session_time"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :remarks, "備考"%></li>
+        <li class="client_input"><%= f.text_area :remarks ,class:"remarks",placeholder:"既往歴など"%></li>
+      </div>
+      <div class="client_detail_inner button_wrapper">
+        <%= f.submit "保存する",class:"show_update session_day_update_submit" %>
+      </div>
+      </ul>
+    <%end%>

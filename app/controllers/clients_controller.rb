@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to clients_path
+      redirect_to trainer_path(current_trainer.id)
     else
       render :edit
     end

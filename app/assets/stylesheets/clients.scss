@@ -20,6 +20,13 @@ th,td{
 .session_update{
   font-size: 8px;
 }
+.error_message{
+width: 80%;
+margin: 0 auto; 
+margin-top: 50px;
+display: contents;
+color: red;
+}
 // カレンダー
 .calender{
   width: 80%;
@@ -77,4 +84,25 @@ th,td{
 }
 .session_day_update_submit{
   margin: 0 0 0 auto;
+}
+// 新規顧客情報の入力
+.client_input_label{
+  width: 200px;
+}
+.client_input{
+  display: block;
+  margin-bottom: 29px;
+  width: 300px;
+}
+.age{
+  width: 30px;
+}
+.name, .purpose, .weakness, .belonging, .remarks{
+  width: 100%;
+}
+.start_time{
+  width: 140px;
+}
+.purpose, .weakness{
+  height: 70px;
 }
