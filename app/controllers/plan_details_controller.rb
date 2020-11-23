@@ -26,6 +26,7 @@ class PlanDetailsController < ApplicationController
 
 
   def show
+    @client = Client.find(params[:client_id])
     @plan_detail = PlanDetail.find(params[:id])
   end
 

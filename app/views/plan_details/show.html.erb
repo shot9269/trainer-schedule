@@ -1,12 +1,16 @@
+<div class="container">
+  <h2 class="login_trainer_title"><%= @plan.title%></h2>
+  
+  <table class="plan_index_table">
+    <tr class="table_header">
+      <th>種目</th><th>重量</th><th>セット数</th><th>レップ数</th><th></th>
+    </tr>
+    <tr>
 
-<%= @plan.title%><br>
-
-<table border="1">
-  <tr>
-    <th>種目</th><th>重量</th><th>セット数</th><th>レップ数</th>
-  </tr>
-  <tr>
-
-    <td><%= @plan_detail.subject%></td><td><%= @plan_detail.weight%>kg</td><td><%= @plan_detail.set%>sets</td><td><%= @plan_detail.rep%>reps</td><td><%=link_to "編集",edit_client_plan_plan_detail_path%></td>
-  </tr>
-</table>
+      <td><%= @plan_detail.subject%></td><td><%= @plan_detail.weight%>kg</td><td><%= @plan_detail.set%>sets</td><td><%= @plan_detail.rep%>reps</td><td><%=link_to "編集",edit_client_plan_plan_detail_path%></td>
+    </tr>
+  </table>
+  <div class="add_plan_area">
+    <%=link_to "戻る",client_plans_path(client_id: @client.id),method: :get,class:"back_to_index"%>
+  </div>
+</div>
