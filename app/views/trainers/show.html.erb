@@ -1,3 +1,10 @@
 <div class="container">
-  <h2>ただいまの顧客数：<%=@client.count%></h2>
+  <h2 class="login_trainer_title">トレーナー情報</h2>
+  <h2>ただいまの顧客数：<%=@client.count%>名</h2>
+
+
+  <div class="chart-area">
+    <h3>顧客数推移</h3>
+    <%= column_chart @client.group_by_month_of_year(:created_at).count, xtitle: "月", ytitle: "顧客数", min: 0, max: 20 %>
+  </div>
 </div>
