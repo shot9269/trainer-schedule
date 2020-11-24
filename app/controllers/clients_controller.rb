@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   before_action :authenticate_trainer!
-  # before_action :authorized_trainer, only: [:show,:edit,:update]
-  before_action :client_id, only: [:show,:edit,:update]
+  #before_action :authorized_trainer, only: [:show,:edit,:update]
+  before_action :client_id, only: [:show,:edit,:update,:session_update]
 
   def index
     @clients = Client.where(trainer_id: current_trainer.id)
@@ -33,6 +33,10 @@ class ClientsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def session_update
+
   end
 
 

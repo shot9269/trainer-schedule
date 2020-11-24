@@ -1,10 +1,21 @@
-
-<%= @client.name%>様のメニュー一覧
-<% @client.plans.each_with_index do |plan,i|%>
-<ul>
-  <li>
-    <%=i+1 %>&nbsp;<%=link_to plan.title, client_plan_plan_detail_path(plan_id:plan.id, id: plan.plan_details.ids)%>
-    <%= link_to "削除", client_plan_path(id: plan.id),method: :delete, data: {confirm: "#{plan.title}を削除しますか？"} %>
-  </li>
-</ul>
-<%end%>
+<div class="container">
+  <h2 class="login_trainer_title"><%= @client.name%>様トレーニングプラン一覧</h2>
+  <table class="plan_index_table">
+      <tr class="table_header">
+        <th></th><th>プラン名</th><th colspan="2"></th>
+      </tr>
+    <% @client.plans.each_with_index do |plan,i|%>
+      <tr>
+        <th><%=i+1 %></th><th><%=link_to plan.title, client_plan_plan_detail_path(plan_id:plan.id, id: plan.plan_details.ids)%></th>
+        <th><%= link_to "削除", client_plan_path(id: plan.id),method: :delete, data: {confirm: "#{plan.title}を削除しますか？"} %></th>
+        <th><%= link_to "編集", client_plan_path(id: plan.id)%></th>
+      </tr>
+    <%end%>
+  </table>
+  <div class="add_plan_area">
+  <% if @client.plans.empty? %>
+    <p class="plan_empty">プランがありません。右下の追加ボタンからメニューを追加して下さい。</p>
+  <% end %>
+    <%=button_to "プランの追加",new_client_plan_path(client_id: @client.id),method: :get,class:"add_plan_btn"%>
+  </div>
+</div>

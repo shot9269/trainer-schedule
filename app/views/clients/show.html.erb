@@ -1,10 +1,48 @@
-<h2>顧客の詳細ページ</h2>
-<%if @client.image.attached?%>
-  <%= image_tag @client.image, size:"100x100" %>
-<%end%>
-<p>名前：<%= @client.name%></p>
-<p>年齢：<%= @client.age%>歳</p>
-<p>所属店舗：<%= @client.belonging%></p>
-<p>目的：<%= @client.purpose%></p>
-<p>非認知課題：<%= @client.weakness%></p>
-<p>備考：<%= @client.remarks%></p>
+
+
+
+<div class="container">
+  <h2 class="login_trainer_title"><%= @client.name%>&nbsp;様の詳細ページ</h2>
+    <%if @client.image.attached?%>
+      <%= image_tag @client.image, size:"100x100" %>
+    <%end%>
+    <ul class = "client_detail">
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">名前</p></li>
+        <li><p class="client_detail_content"><%= @client.name%></p></li>
+      </div>
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">年齢</p></li>
+        <li><p class="client_detail_content"><%= @client.age%>歳</p></li>
+      </div>
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">所属店舗</p></li>
+        <li><p class="client_detail_content"><%= @client.belonging%></p></li>
+      </div>
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">目的</p></li>
+        <li><p class="client_detail_content"><%= @client.purpose%></p></li>
+      </div>
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">非認知課題</p></li>
+        <li><p class="client_detail_content"><%= @client.weakness%></p></li>
+      </div>
+      <div class="client_detail_inner">
+        <li><p class="client_detail_title">備考</p></li>
+        <li>
+          <p class="client_detail_content">
+            <%if @client.remarks.present?%>
+              <%= @client.remarks%>
+            <%else%>
+              なし
+            <%end%>       
+          </p>
+        </li>
+      </div>
+      <div class= "client_detail_inner button_wrapper">
+        <%= link_to "削除",  client_path(@client.id),method: :delete,class:"delete_link",data: { confirm: "削除してよろしいですか？" }%>
+        <%= button_to "編集",  edit_client_path(@client.id),class:"show_update",method: :get%>
+      </div>
+    </ul>
+  </div>
+</div>

@@ -24,7 +24,7 @@ class PlansController < ApplicationController
   def destroy
     plan = Plan.find(params[:id])
     plan.destroy
-    redirect_to client_plans_path(client_id: current_trainer.id)
+    redirect_to client_plans_path(client_id: params[:client_id])
   end
 
 

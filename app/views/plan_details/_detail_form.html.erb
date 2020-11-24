@@ -1,27 +1,28 @@
-<%= @plan.title%><br>
-<%= @plan.description %>
+<div class="container">
+<h2 class="login_trainer_title">プラン詳細</h2>
+<h3><%= @plan.title%></h3>
 <%= form_with model:[@client,@plan,@plan_detail],id:"workoutForm",local: true do |f|%>
 <%=render 'shared/error_messages', model: f.object %>
-<ul class = "plan_detail_subject", id = "workout">
-    <li>
-      <%= f.label :subject, "種目:" %>
-      <%= f.text_field :subject%>
-    </li>
-    <li>
-      <%= f.label :weight, "/重量:" %>
-      <%= f.number_field :weight,class:"weight"%><span>kg/</span>
-    </li>
-    <li>
-      <%= f.label :set, "セット数:"%>
-      <%= f.number_field :set,class:"subject_set_rep" %><span>セット/</span>
-    </li>
-    <li>
-    <%= f.label :rep, "回数:" %>
-    <%= f.number_field :rep,class:"subject_set_rep" %><span>回</span>
-    </li>
-  
-</ul>
-
+<div class="add_menu_list">
+  <ul class = "plan_detail_subject", id = "workout">
+      <li>
+        <%= f.label :subject, "種目:" %>
+        <%= f.text_field :subject%>
+      </li>
+      <li>
+        <%= f.label :weight, "/重量:" %>
+        <%= f.number_field :weight,class:"weight"%><span>kg/</span>
+      </li>
+      <li>
+        <%= f.label :set, "セット数:"%>
+        <%= f.number_field :set,class:"subject_set_rep" %><span>sets/</span>
+      </li>
+      <li>
+      <%= f.label :rep, "回数:" %>
+      <%= f.number_field :rep,class:"subject_set_rep" %><span>reps</span>
+      </li>
+  </ul>
+</div>
 <ul class = "plan_detail_subject">
     <li>
       <%= f.label :cardio, "有酸素運動:" %>
@@ -32,7 +33,10 @@
       <%= f.number_field :cardio_time,class:"cardio_time"%><span>分</span>
     </li>
 </ul>
-    <button type="button" id="add_subject">項目を追加</button>
-
-  <%=f.submit "保存"%>
+<%# ↓↓後ほど実装するためコメントアウト↓↓ %>
+<%# <button type="button" id="add_subject">項目を追加</button> %>
+<div class="add_menu_submit">
+  <%=f.submit "保存", class:"add_menu_save"%>
+</div>
 <%end%>
+</div>

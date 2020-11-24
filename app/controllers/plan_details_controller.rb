@@ -17,8 +17,16 @@ class PlanDetailsController < ApplicationController
       render :new
     end
   end
+    # @plan_detail = PlanDetail.new
+    # if @plan_detail.create_plan(plan_detail_params)
+    #   redirect_to client_plans_path(client_id: @client.id) and return
+    # else
+    #   render :new and return
+    # end
+
 
   def show
+    @client = Client.find(params[:client_id])
     @plan_detail = PlanDetail.find(params[:id])
   end
 

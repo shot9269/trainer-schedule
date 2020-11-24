@@ -1,22 +1,25 @@
-<h2><%= @client.name%>様の新規メニュー</h2>
-
-<ul class = "client_info">
+<div class="container">
+  <h2 class="login_trainer_title"><%= @client.name%>様の新規メニュー</h2>
   <%= form_with( model: [@client, @plan], local: true) do |f| %>
-    <%=render 'shared/error_messages', model: f.object %>
-    <li>
-      <%= f.label :title, "タイトル" %><br>
-      <%= f.text_field :title%>
-    </li>
-    <li>
-      <%= f.label :description, "説明・詳細", row: 10 %><br>
-      <%= f.text_area :description %>
-    </li>
-    <li>
-    <%= f.label :caution, "既往歴" %><br>
-    <%= f.text_area :caution %>
-    </li>
-
-    <%=f.submit "詳細を追加"%>
-
+    <div class="error_message">
+      <%=render 'shared/error_messages', model: f.object %>
+    </div>
+    <ul class = "client_detail">
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :title, "タイトル"%></li>
+        <li class="client_input"><%= f.text_field :title ,class:"title"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :description, "説明・詳細", row: 10 %></li>
+        <li class="client_input"><%= f.text_area :description,class:"description"%></li>
+      </div>
+      <div class="client_detail_inner">
+        <li class="client_input_label"><%= f.label :caution, "既往歴"%></li>
+        <li class="client_input"><%= f.text_area :caution,class:"caution" %></li>
+      </div>      
+      <div class="client_detail_inner button_wrapper">
+        <%= f.submit "詳細追加",class:"add_detail_btn" %>
+      </div>
+    </ul>
   <%end%>
-</ul>
+</div>

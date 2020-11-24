@@ -1,0 +1,21 @@
+  <div class= "container">
+  <h2 class="login_trainer_title">次回セッション日の更新</h2>
+  <%= form_with  model: @client, local: true do |f| %>
+  <div class="error_message">
+    <%=render 'shared/error_messages', model: f.object %>
+  </div>
+  <ul class = "client_detail">
+    <div class="client_detail_inner">
+      <li><p class="client_detail_title"><%= f.label :start_time, "次回予約日"%></p></li>
+      <li><%= f.date_field :start_time,class:"client_detail_content session_day"%></li>
+    </div>
+    <div class="client_detail_inner">
+        <li><p class="client_detail_title"><%= f.label :session_time, "開始時間" %></p></li>
+        <li><%= f.time_field :session_time,class:"client_detail_content session_day"%></li>
+    </div>
+    <div class="button_wrapper client_detail_inner">
+      <%= f.submit "更新",class:"show_update session_day_update_submit" %>
+    </div>
+  </ul>
+  <%end%>
+</div>

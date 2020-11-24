@@ -2,6 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.clients{
+  margin-bottom: 50px;
+}
+table{
+  width: 100%;
+}
+.table_header{
+  color:white;
+  background-color: #4b4b4b;
+  height: 30px;
+}
+th,td{
+  border:solid 1px #aaaaaa;
+  font-weight: lighter;
+}
+.session_update{
+  font-size: 8px;
+}
+.error_message{
+width: 80%;
+margin: 0 auto; 
+margin-top: 50px;
+display: contents;
+color: red;
+}
+// カレンダー
 .calender{
   width: 80%;
 }
@@ -10,5 +36,73 @@
   padding: 0;
 }
 .calender_client_list{
-  font-size: 15px;
+  font-size: 13px;
+}
+// 詳細ページ
+.client_detail{
+  width: 80%;
+  margin: 0 auto; 
+  margin-top: 50px;
+}
+.client_detail_inner{
+  display: flex;
+  width: 100%;
+}
+
+.client_detail_title{
+  margin-bottom: 30px;
+  margin-right: 100px;
+  width: 100px;
+}
+.client_detail_content{
+  display: block;
+  margin-bottom: 29px;
+  width: 300px;
+  border-bottom: 1px solid #4b4b4b;
+}
+.button_wrapper{
+  width: 500px;
+}
+.delete_link{
+  height: 33.98px;
+  margin: 0 0 0 auto;
+  padding-top: 8px;
+  font-size: small;
+  
+}
+.show_update{
+  margin-left:10px ;
+  border: none;
+  background-color: #4b4b4b;;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.session_day{
+  margin-top: 17px;
+  border-bottom: 1px solid #4b4b4b;
+}
+.session_day_update_submit{
+  margin: 0 0 0 auto;
+}
+// 新規顧客情報の入力
+.client_input_label{
+  width: 200px;
+}
+.client_input{
+  display: block;
+  margin-bottom: 29px;
+  width: 300px;
+}
+.age{
+  width: 30px;
+}
+.name, .purpose, .weakness, .belonging, .remarks{
+  width: 100%;
+}
+.start_time{
+  width: 140px;
+}
+.purpose, .weakness{
+  height: 70px;
 }

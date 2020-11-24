@@ -1,9 +1,10 @@
 class TrainersController < ApplicationController 
+  before_action :authenticate_trainer!
   def index
   end
 
   def show
-    @clients = Client.all.includes(:trainer)
+    @client = Client.where(trainer_id: current_trainer.id)
   end
   
 end
