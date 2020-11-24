@@ -59,3 +59,5 @@ gem "image_processing", "~> 1.0"
 gem "simple_calendar", "~> 2.0"
 gem 'rails-i18n'
 gem 'rename'
+gem "chartkick"
+gem 'groupdate'
