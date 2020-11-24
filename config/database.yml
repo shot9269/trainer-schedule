@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: trainer_schedule_development
+  database: trainer_shedule_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: trainer_schedule_test
+  database: trainer_shedule_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: trainer_schedule_production
-  username: trainer_schedule
-  password: <%= ENV['TRAINER_SCHEDULE_DATABASE_PASSWORD'] %>
+  database: trainer_shedule_production
+  username: trainer_shedule
+  password: <%= ENV['trainer_shedule_DATABASE_PASSWORD'] %>
