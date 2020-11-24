@@ -16,7 +16,7 @@
       <% if trainer_signed_in? %>
         <div class = "header-left">
           <h2><%=link_to "顧客管理システム","/trainers/#{current_trainer.id}", class:"title" %></h2>
-          <p>トレイナー：<%=current_trainer.name%><p>
+          <p>トレイナー：<%=link_to current_trainer.name, "/trainers/#{current_trainer.id}"%><p>
         </div>
         <div class= "header-right">
           <%=link_to "顧客一覧",clients_path, class:"client_all" %>
