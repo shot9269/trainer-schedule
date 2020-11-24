@@ -28,15 +28,15 @@ class ClientsController < ApplicationController
 
 
   def update
-
     if @client.update(client_params)
-      redirect_to trainer_path(current_trainer.id)
+      redirect_to clients_path
     else
       render :edit
     end
   end
 
   def session_update
+
   end
 
 

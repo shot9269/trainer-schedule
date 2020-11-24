@@ -37,12 +37,13 @@ header{
 .header-left{
   display: flex;
   align-items: center;
-  width: 40%;
+  width: 60%;
  
 }
 .title{
  color: black;
  text-decoration: none;
+ margin-right: 10px;
 }
 .header-right{
  display: inline-block
