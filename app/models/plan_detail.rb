@@ -5,6 +5,7 @@ class PlanDetail < ApplicationRecord
     validates :subject
     validates :set
     validates :rep
+    validates :weight
     validates :plan_id
   end
 

@@ -23,11 +23,15 @@ ja:
         password_confirmation: 確認
         belonging: 所属店舗
         area: 活動地域
-
       plan:
         title: タイトル
         description: 説明
         caution: 既往歴
+      plan_detail:
+        subject: 種目
+        weight: 重量
+        set: セット数
+        rep: 回数
         
 
   date:
