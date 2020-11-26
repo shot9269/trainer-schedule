@@ -68,3 +68,8 @@ header{
 .logout:hover{
  color: black
 }
+
+@media (max-width:599px){
+  li {
+  }
+}
