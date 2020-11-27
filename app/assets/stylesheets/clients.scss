@@ -108,6 +108,7 @@ color: red;
 }
 
 @media (max-width:599px){
+// 顧客一覧
  th{
    font-size: 10px;
  }
@@ -122,5 +123,21 @@ color: red;
 }
  .calender_header h3{
    text-align: center;
+ }
+//  セッション日更新
+ .client_detail{
+   width: 100vw;
+ }
+ .client_detail_inner{
+
+ }
+ .client_detail_inner{
+   width: 100%;
+ }
+ .session_day_update_submit{
+   margin-right: 70px;
+ }
+ .session_day{
+   width: 100px;
  }
 }
