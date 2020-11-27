@@ -48,3 +48,13 @@ li{
   width: 100px;
   margin: 0 auto;
 }
+
+// レスポンシブ
+@media (max-width:599px){
+  .page_title{
+    text-align: center;
+  }
+  .signup_area{
+    width: 300px;
+  }
+}
