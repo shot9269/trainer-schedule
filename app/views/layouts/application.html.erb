@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,user-scalable=yes">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -16,13 +17,26 @@
       <% if trainer_signed_in? %>
         <div class = "header-left">
           <h2><%=link_to "顧客管理システム","/trainers/#{current_trainer.id}", class:"title" %></h2>
-          <p>トレイナー：<%=link_to current_trainer.name, "/trainers/#{current_trainer.id}"%><p>
+          <span class= "trainer-name">トレイナー：<%=link_to current_trainer.name, "/trainers/#{current_trainer.id}"%><span>
         </div>
         <div class= "header-right">
           <%=link_to "顧客一覧",clients_path, class:"client_all" %>
           <%=link_to "顧客追加",new_client_path, class:"client" %>
           <%=link_to "ログアウト",destroy_trainer_session_path, method: :delete, class:"logout" %>
         </div>
+        <%# ↓レスポンシブ %>
+        <ul class="responsive" >
+          <li>
+            <i class="fa fa-navicon fa-2x "></i>
+            <ul>
+              <li><%=link_to current_trainer.name, "/trainers/#{current_trainer.id}",class:"response-trainer"%></li>
+              <li><%=link_to "顧客一覧",clients_path, class:"client_all" %></li>
+              <li><%=link_to "顧客追加",new_client_path, class:"client" %></li>
+              <li><%=link_to "ログアウト",destroy_trainer_session_path, method: :delete, class:"logout" %></li>
+            </ul>
+          </li>
+        </ul>
+        <%# ↑レスポンシブ %>
       <%else%>
         <div class = "header-left">
           <h3><%=link_to "顧客管理システム",new_trainer_session_path, class:"title" %></h3>

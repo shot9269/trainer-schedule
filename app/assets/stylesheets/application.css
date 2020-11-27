@@ -48,7 +48,7 @@ header{
 .header-right{
  display: inline-block
 }
-.login, .logout, .top-about, .client, .client_all,.signin{
+.login, .logout, .top-about, .client, .client_all,.signin, .response-trainer{
  color: #4b4b4b;
  font-weight: 700;
  font-size: 13px;
@@ -69,7 +69,65 @@ header{
  color: black
 }
 
+.responsive{
+  display: none;
+}
+
 @media (max-width:599px){
-  li {
+  .responsive a{
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  ul ,li{
+    margin: 0;
+    padding:0;
+    text-align: right;
+  }
+
+  .header-content{
+    height: 60px;
+  }
+  .header-left{
+
+  }
+  .title{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .trainer-name{
+    display: none;
+  }
+
+  /* メニューのレスポンシブ */
+  .header-right{
+    display: none;
+    
+  }
+  .responsive{
+    display: flex;
+    height: 2rem;
+    width: 150px;
+  }
+  .fa{
+    padding-right: 10px;
+  }
+  .responsive li {
+    list-style: none;
+    position: relative;
+    margin: 0 0 0 auto;
+    width: 110px;
+    padding-right: 10px;
+  }
+  .responsive li li{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .responsive li li a {
+    border-top: 1px solid #eee;
+  }
+  .responsive li:hover > ul > li{
+    height: 2rem;
+    overflow: visible;
   }
 }
