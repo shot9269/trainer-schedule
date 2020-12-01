@@ -4,12 +4,12 @@
       <div class = "clients">
           <table>
             <tr class="table_header">
-              <th>名前</th><th>所属ジム</th><th>次回セッション<br><span class="session_update">※日付をクリックして更新してください</span></th><th>開始時間</th><th colspan="2">メニュー管理</th>
+              <th class="th1">名前</th><th class="th2">所属ジム</th><th class="th3">次回セッション<br><span class="session_update">※日付をクリックして更新してください</span></th><th class="th4">開始時間</th><th class="th5" colspan="2">メニュー管理</th>
             </tr>
             <% @clients.each do |client|%>
             <tr>
-              <th><%=link_to client.name, client_path(client.id) %></th><th><%= client.belonging%></th><th><%=link_to client.start_time, session_update_client_path(client.id)%></th>
-              <th><%= client.session_time.strftime('%H:%M')%></th><th><%=button_to "作成",new_client_plan_path(client_id: client.id),method: :get%></th><th><%= button_to "一覧をみる",client_plans_path(client_id: client.id),method: :get%></th>
+              <th class="th1"><%=link_to client.name, client_path(client.id) %></th><th class="th2"><%= client.belonging%></th><th class="th3"><%=link_to client.start_time, session_update_client_path(client.id)%></th>
+              <th class="th4"><%= client.session_time.strftime('%H:%M')%></th><th class="th5"><%=button_to "作成",new_client_plan_path(client_id: client.id),method: :get%></th><th class="th6"><%= button_to "一覧をみる",client_plans_path(client_id: client.id),method: :get%></th>
             </tr>
             <%end%>
           </table>

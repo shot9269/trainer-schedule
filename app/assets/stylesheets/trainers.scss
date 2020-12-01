@@ -13,6 +13,7 @@ li{
   justify-content: space-between;
 }
 .login_trainer_title{
+
   padding-left: 5px;
   border-left:15px solid blue ;
 }
@@ -47,4 +48,17 @@ li{
 .chart-area h3{
   width: 100px;
   margin: 0 auto;
+}
+
+// レスポンシブ
+@media (max-width:599px){
+  .page_title{
+    text-align: center;
+  }
+  .signup_area{
+    width: 300px;
+  }
+  .div{
+    max-width: 100px;
+  }
 }

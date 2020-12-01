@@ -4,7 +4,7 @@
 <div class="container">
   <h2 class="login_trainer_title"><%= @client.name%>&nbsp;様の詳細ページ</h2>
     <%if @client.image.attached?%>
-      <%= image_tag @client.image, size:"100x100" %>
+      <%= image_tag @client.image, size:"100x100" ,class:"client-image"%>
     <%end%>
     <ul class = "client_detail">
       <div class="client_detail_inner">
