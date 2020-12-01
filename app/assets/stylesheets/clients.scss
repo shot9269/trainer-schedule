@@ -129,9 +129,6 @@ color: red;
    width: 100vw;
  }
  .client_detail_inner{
-
- }
- .client_detail_inner{
    width: 100%;
  }
  .session_day_update_submit{
@@ -140,4 +137,16 @@ color: red;
  .session_day{
    width: 100px;
  }
+//  顧客詳細
+.client_detail_title{
+  width: 100px;
+  padding-left: 0px;
+  }
+.client_detail_content{
+  width: 130px;
+  }
+.show_update{
+  margin-right: 45px;
+}
+
 }
